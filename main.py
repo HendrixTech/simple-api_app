@@ -18,8 +18,8 @@ async def get_data(
     current_time = datetime.now(utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     current_day = datetime.now(utc).strftime("%A")
 
-    github_repo_url = ""
-    github_file_url = ""
+    github_repo_url = "https://github.com/HendrixTech/simple-api_app"
+    github_file_url = "https://github.com/HendrixTech/simple-api_app/blob/main/main.py"
 
     response = {
         "slack_name": slack_name,
