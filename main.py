@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Query
 from datetime import datetime
-from pytz import utc
+import pytz
 
 app = FastAPI()
 
@@ -15,8 +15,8 @@ async def get_data(
         slack_name: str = Query(..., title="Slack Name"),
         track: str = Query(..., title="Track"),
 ):
-    current_time = datetime.now(utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-    current_day = datetime.now(utc).strftime("%A")
+    current_time = datetime.now(pytz.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    current_day = datetime.now(pytz.utc).strftime("%A")
 
     github_repo_url = "https://github.com/HendrixTech/simple-api_app"
     github_file_url = "https://github.com/HendrixTech/simple-api_app/blob/main/main.py"
